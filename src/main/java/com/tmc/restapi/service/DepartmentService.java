@@ -20,9 +20,10 @@ public class DepartmentService {
         return this.repository.findAll();
 
     }
-    public Department getByid(long id){
+    public Department getById(long id){
         return this.repository.findById(id).get();
     }
+
 
     public Department add(Department department){
         return this.repository.save(department);

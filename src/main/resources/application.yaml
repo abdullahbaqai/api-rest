@@ -1,13 +1,21 @@
 spring:
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=companydb
+    url: jdbc:sqlserver://localhost:1433;encrypt=true;TrustServerCertificate=true;databaseName=companydb
     username: sa
     password: admin123
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
 
   jpa:
     show-sql: true
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
 
   mvc:
     pathmatch:
       matching-strategy: ant_path_matcher
+
+server:
+  port: 8081
